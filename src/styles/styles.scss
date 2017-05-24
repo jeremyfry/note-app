@@ -1,0 +1,14 @@
+@import "material.css";
+//mdl overrides
+.mdl-cell--centered{
+	margin: 0 auto;
+}
+
+.mdl-layout{
+	height: 100vh;
+}
+
+.mdl-layout--row{
+	flex-direction: row;
+}
+
