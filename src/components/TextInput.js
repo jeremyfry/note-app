@@ -5,10 +5,9 @@ class TextInput extends React.Component{
 
 	render(){
 		const {placeholder, passwordField} = this.props;
-		const {dirty, active} = this.props.meta;
+		const {dirty, active, touched, error} = this.props.meta;
 		const {onChange, onBlur, onFocus, value, name} = this.props.input;
 
-		console.log(this.props.meta);
 		const optionalClasses = {
 			'is-dirty': dirty,
 			'is-focused': active
@@ -25,6 +24,7 @@ class TextInput extends React.Component{
 					onBlur={onBlur}
 					onChange={onChange}/>
 				<label className="mdl-textfield__label" htmlFor={name}>{placeholder}</label>
+				{touched && error && <span className="mdl-textfield__error">{error}</span>}
 			</div>
 		);
 	}
@@ -32,7 +32,9 @@ class TextInput extends React.Component{
 
 TextInput.propTypes = {
 	placeholder: PropTypes.string,
-	passwordField: PropTypes.bool
+	passwordField: PropTypes.bool,
+	meta: PropTypes.object,
+	input: PropTypes.object
 };
 
 export default TextInput;

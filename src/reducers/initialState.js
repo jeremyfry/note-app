@@ -5,4 +5,4 @@ export default {
 		role: null
 	},
 	notes: []
-}
+};

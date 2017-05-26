@@ -18,6 +18,10 @@ h1,h2,h3,h4,h5{
 	flex-direction: row;
 }
 
+.mdl-textfield__error{
+	visibility: visible;
+}
+
 //app styles
 .login-form-media{
 	flex-grow: 1;

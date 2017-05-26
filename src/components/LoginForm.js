@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TextInput from './TextInput';
 import { Field, reduxForm } from 'redux-form';
+import validate from '../formValidations/loginForm.validation';
+import PropTypes from 'prop-types';
 
 class LoginForm extends Component {
 	render() {
@@ -13,13 +15,20 @@ class LoginForm extends Component {
 				<div className="mdl-card__supporting-text">
 					<Field component={TextInput} name="username" placeholder="Email Address"/>
 					<Field component={TextInput} name="password" passwordField placeholder="Password"/>
-					<button type="submit" className="mdl-button mdl-button--right mdl-button--raised mdl-button--accent">Submit</button>
+				</div>
+				<div className="mdl-card__actions mdl-card--border">
+					<button type="submit" className="mdl-button mdl-button--right mdl-button--raised mdl-button--accent">Log In</button>
 				</div>
 			</form>
 		);
 	}
 }
 
+LoginForm.propTypes = {
+	handleSubmit: PropTypes.function.isRequired
+};
+
 export default reduxForm({
-	form: 'login'
+	form: 'login',
+	validate
 })(LoginForm);

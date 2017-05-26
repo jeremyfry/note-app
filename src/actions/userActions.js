@@ -1,16 +1,20 @@
 import {USER_ACTIONS} from '../constants/constants';
-export const loginAsync = () => {
+import { push } from 'react-router-redux';
+import axios from 'axios';
+export const loginAsync = (userInfo) => {
 	return (dispatch) => {
-		//dispatch(increment());
-
-		return fetch('url').then(response => {
-			dispatch({
-				type: USER_ACTIONS.UPDATE,
-				user: {...response, authenticated: true}
+		// this would be a post, with password included.
+		return axios.get(`/mockBackend/${userInfo.username}.json`)
+			.then(response => {
+				dispatch({
+					type: USER_ACTIONS.UPDATE,
+					user: {...response, authenticated: true}
+				});
+				dispatch(push('/notes'));
+			})
+			.catch( () =>{
+				//Handle invalid login
 			});
-		}, (error) =>{
-			//Handle invalid login
-		});
 	};
 };
 

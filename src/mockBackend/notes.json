@@ -1,0 +1,8 @@
+[
+	{
+		"id": "note_1",
+		"title": "Note Title",
+		"text": "Note Text",
+		"roles": ["MGR", "ADMIN"]
+	}
+]

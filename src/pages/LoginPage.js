@@ -3,11 +3,12 @@ import {connect} from 'react-redux';
 import LoginForm from '../components/LoginForm';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/userActions';
+import PropTypes from 'prop-types';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+	const {actions} = props;
 	const submit = (values) => {
-		// Do something with the form values
-		console.log(values);
+		actions.loginAsync(values);
 	};
 	return (
 		<div className="mdl-layout mdl-layout--row mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -16,7 +17,11 @@ const LoginPage = () => {
 	);
 };
 
+LoginPage.propTypes = {
+	actions: PropTypes.object.isRequired
+};
+
 export default connect(
-	(state)=>({}),
-	(dispatch) => ({ actions: bindActionCreators(Object.assign({}, actions), dispatch) })
+	()=>({}),
+	(dispatch) => ({ actions: bindActionCreators({...actions}, dispatch)})
 )(LoginPage);

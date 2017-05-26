@@ -29,6 +29,7 @@
   "author": "Jeremy Fry",
   "license": "MIT",
   "dependencies": {
+    "axios": "0.16.1",
     "object-assign": "4.1.0",
     "react": "15.5.4",
     "react-dom": "15.5.4",
