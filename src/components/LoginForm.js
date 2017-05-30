@@ -25,7 +25,7 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-	handleSubmit: PropTypes.function.isRequired
+	onSubmit: PropTypes.func.isRequired
 };
 
 export default reduxForm({

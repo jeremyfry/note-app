@@ -8,8 +8,8 @@ describe('Reducers - Note Reducer', () => {
 	});
 
 	it('should handle the INSERT action', () => {
-		const note = { id: 1, text: 'Text', geo: { lat: 1, lon: 2}};
-		const expected = [note];
+		const note = { text: 'Text', geo: { lat: 1, lon: 2}};
+		const expected = [{...note, id: 5}];
 		const action = {
 			type: NOTE_ACTIONS.INSERT,
 			note
