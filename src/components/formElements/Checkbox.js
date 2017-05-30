@@ -14,8 +14,8 @@ class Checkbox extends React.Component{
 
 		return  (
 			<div className={classNames('mdl-textfield mdl-textfield--full-width mdl-textfield--floating-label', optionalClasses)}>
-				<label className="mdl-checkbox" htmlFor={name}>
-					<input type="checkbox" className="mdl-checkbox__input" onChange={onChange}/>
+				<label className="mdl-checkbox">
+					<input type="checkbox" className="mdl-checkbox__input" name={name} onChange={onChange}/>
 					<span className="mdl-checkbox__label">{placeholder}</span>
 				</label>
 			</div>

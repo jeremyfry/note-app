@@ -1,4 +1,6 @@
 @import "material.css";
+@import "fonts.css";
+
 //partial resets
 h1,h2,h3,h4,h5{
 	margin: 0;
@@ -8,6 +10,15 @@ h1,h2,h3,h4,h5{
 //mdl overrides
 .mdl-cell--centered{
 	margin: 0 auto;
+}
+
+.mdl-card__actions--right-aligned{
+	text-align: right;
+}
+
+.mdl-card__actions--two-actions{
+	display: flex;
+	justify-content: space-between;
 }
 
 .mdl-layout{
@@ -42,6 +53,12 @@ h1,h2,h3,h4,h5{
 	margin: 0 auto;
 }
 
+.note-page__add-new{
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+}
+
 .note-card{
 	margin-bottom: 40px;
 }
@@ -52,4 +69,16 @@ h1,h2,h3,h4,h5{
 
 .note-card__date-author-block{
 	text-align: right;
+}
+
+.modal{
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: scroll;
+	background: rgba(0,0,0,.3);
+	z-index: 900;
 }

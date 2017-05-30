@@ -22,9 +22,8 @@ const NoteComponent = (props) =>{
 					<StaticMap lat={note.geo.lat} lon={note.geo.lon}/>
 				</div>
 			</div>
-			<div className="mdl-card__actions">
-				<button className="mdl-button mdl-button--right mdl-button--raised mdl-button--accent" onClick={edit}>Edit
-				</button>
+			<div className="mdl-card__actions mdl-card--border mdl-card__actions--right-aligned">
+				<button className="mdl-button mdl-button--right mdl-button--raised" onClick={edit}>Edit This Note</button>
 			</div>
 		</div>
 	);

@@ -6,7 +6,7 @@ describe('Reducers - GEO Reducer', () =>{
 		expect(reducer([], {})).toEqual([]);
 	});
 
-	it('should handle the UPDATE action for text', () =>{
+	it('should handle the UPDATE action', () =>{
 		const geo = {lat: 1, lon: 2};
 		const initial = {lat: 0, lon: 1};
 		const expected = geo;
@@ -17,7 +17,7 @@ describe('Reducers - GEO Reducer', () =>{
 		expect(reducer(initial, action)).toEqual(expected);
 	});
 
-	it('should handle the USE_CURRENT action for text', () =>{
+	it('should handle the USE_CURRENT action', () =>{
 		const initial = initialState.geo;
 		const expected = {...initialState.geo, useCurrentLocation: true};
 		const action = {

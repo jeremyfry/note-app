@@ -9,7 +9,7 @@ class TextInput extends React.Component{
 		const {onChange, onBlur, onFocus, value, name} = this.props.input;
 
 		const optionalClasses = {
-			'is-dirty': dirty,
+			'is-dirty': dirty || value,
 			'is-focused': active
 		};
 

@@ -9,7 +9,7 @@ class TextInput extends React.Component{
 		const {onChange, onBlur, onFocus, value, name} = this.props.input;
 
 		const optionalClasses = {
-			'is-dirty': dirty,
+			'is-dirty': dirty || value,
 			'is-focused': active
 		};
 
@@ -21,7 +21,8 @@ class TextInput extends React.Component{
 					value={value}
 					onFocus={onFocus}
 					onBlur={onBlur}
-					onChange={onChange}/>
+					onChange={onChange}
+					rows="7"/>
 				<label className="mdl-textfield__label" htmlFor={name}>{placeholder}</label>
 				{touched && error && <span className="mdl-textfield__error">{error}</span>}
 			</div>
