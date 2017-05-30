@@ -49,6 +49,11 @@ export default function noteReducer(state = initialState.notes, action){
 				...state,
 				newNoteVisible: true
 			};
+		case NOTE_ACTIONS.SET_INITIAL:
+			return {
+				...state,
+				noteList: [...action.notes]
+			};
 		default:
 			return state;
 	}

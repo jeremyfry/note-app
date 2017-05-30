@@ -1,4 +1,5 @@
 import {NOTE_ACTIONS, GEO_ACTIONS} from '../constants/constants';
+import axios from 'axios';
 
 export const editNote = (note) => ({
 	type: NOTE_ACTIONS.EDIT,
@@ -43,3 +44,18 @@ export const cancelEdit = (note) => {
 export const editNew = () => ({
 	type: NOTE_ACTIONS.CREATE_NEW
 });
+
+export const fetchNotes = () => {
+	return (dispatch) => {
+		return axios.get('/mockBackend/notes.json')
+			.then(response => {
+				dispatch({
+					type: NOTE_ACTIONS.SET_INITIAL,
+					notes: response.data
+				});
+			})
+			.catch(() => {
+				//show an error
+			});
+	}
+};

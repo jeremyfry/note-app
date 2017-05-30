@@ -8,6 +8,9 @@ import Note from '../components/notes/Note';
 import NoteForm from '../components/notes/NoteForm';
 
 class NotesPage extends React.Component {
+	componentWillMount(){
+		this.props.actions.fetchNotes();
+	}
 	render(){
 		const {actions, editableNote, geo, notes} = this.props;
 		const {noteList} = notes;
