@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TextInput from './TextInput';
+import TextInput from '../formElements/TextInput';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../formValidations/loginForm.validation';
+import validate from '../../formValidations/loginForm.validation';
 import PropTypes from 'prop-types';
 
 class LoginForm extends Component {

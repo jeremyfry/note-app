@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedDate } from 'react-intl';
-import StaticMap from '../components/StaticMap';
+import StaticMap from './StaticMap';
 
 const NoteComponent = (props) =>{
 	const {note, editAction} = props;

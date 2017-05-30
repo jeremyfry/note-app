@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from '../tools/classNames';
+import classNames from '../../tools/classNames';
 class TextInput extends React.Component{
 
 	render(){
-		const {placeholder} = this.props;
+		const {placeholder, passwordField} = this.props;
 		const {dirty, active, touched, error} = this.props.meta;
 		const {onChange, onBlur, onFocus, value, name} = this.props.input;
 
@@ -15,8 +15,9 @@ class TextInput extends React.Component{
 
 		return  (
 			<div className={classNames('mdl-textfield mdl-textfield--full-width mdl-textfield--floating-label', optionalClasses)}>
-				<textarea
+				<input
 					className="mdl-textfield__input"
+					type={passwordField ? 'password' : 'text'}
 					name={name}
 					value={value}
 					onFocus={onFocus}
@@ -31,6 +32,7 @@ class TextInput extends React.Component{
 
 TextInput.propTypes = {
 	placeholder: PropTypes.string,
+	passwordField: PropTypes.bool,
 	meta: PropTypes.object,
 	input: PropTypes.object
 };

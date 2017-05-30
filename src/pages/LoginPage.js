@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/login/LoginForm';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/userActions';
 import PropTypes from 'prop-types';

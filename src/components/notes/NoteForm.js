@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TextInput from './TextInput';
-import TextArea from './TextArea';
-import Checkbox from './Checkbox';
+import TextInput from '../formElements/TextInput';
+import TextArea from '../formElements/TextArea';
+import Checkbox from '../formElements/Checkbox';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../formValidations/loginForm.validation';
+import validate from '../../formValidations/loginForm.validation';
 import PropTypes from 'prop-types';
-import StaticMap from '../components/StaticMap';
+import StaticMap from './StaticMap';
 
 class NoteForm extends Component {
 	render() {

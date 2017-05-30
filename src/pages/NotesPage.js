@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/noteActions';
 import * as geoActions from '../actions/geoActions';
-import Nav from '../components/Nav';
-import Note from '../components/Note';
-import NoteForm from '../components/NoteForm';
+import Nav from '../components/layout/Nav';
+import Note from '../components/notes/Note';
+import NoteForm from '../components/notes/NoteForm';
 
 const NotesPage = (props) => {
 	const {notes, actions, editableNote, geo} = props;
